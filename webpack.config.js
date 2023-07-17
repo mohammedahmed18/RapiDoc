@@ -101,6 +101,15 @@ module.exports = {
     port: 8080,
     hot: 'only',
   },
+  // configuration for production mode
+  ...(isProduction && {
+    devServer: {
+      static: {
+        directory: path.resolve(__dirname, 'docs'),
+      },
+      port: process.env.PORT || 8080,
+    },
+  }),
   module: {
     rules: [
       {
