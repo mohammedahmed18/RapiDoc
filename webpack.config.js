@@ -102,14 +102,12 @@ module.exports = {
     hot: 'only',
   },
   // configuration for production mode
-  ...(isProduction && {
     devServer: {
       static: {
         directory: path.resolve(__dirname, 'docs'),
       },
       port: process.env.PORT || 8080,
     },
-  }),
   module: {
     rules: [
       {
